@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lab_5</string>
+    <string name="filter_hint">Filter by currency code or name</string>
+    <string name="currency_name">Currency Name</string>
+    <string name="currency_code">Code</string>
+    <string name="currency_rate">Rate</string>
+</resources>
