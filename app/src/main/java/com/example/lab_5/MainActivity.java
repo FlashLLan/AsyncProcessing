@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         currencyRates = new ArrayList<>();
         adapter = new CurrencyAdapter(currencyRates);
         recyclerView.setAdapter(adapter);
+        loadCurrencyData();
+        adapter.filter("");
+
 
         filterText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -48,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {}
         });
 
-        loadCurrencyData();
     }
 
     private void loadCurrencyData() {
@@ -123,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
         public CurrencyAdapter(List<CurrencyRate> list) {
             this.originalList = list;
-            this.filteredList = new ArrayList<>(list); // Start with all currencies
+            this.filteredList = new ArrayList<>(list);
         }
 
         public void filter(String query) {
@@ -138,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
+
+
             notifyDataSetChanged();
         }
 
